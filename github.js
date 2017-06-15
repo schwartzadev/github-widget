@@ -1,8 +1,3 @@
-// TODO
-// [x] Add link to repo (link h3)
-// [x] link up the info button
-// [ ] nicer 404 behavior
-
 	var totalDownloads = 0
 
 	$(document).ready(function() {
@@ -55,15 +50,16 @@
 	function getDlCount(u, r) {
 		var location = "https://api.github.com/repos/" + u + "/" + r + "/releases"
 		$.ajax({
-			// url: "https://api.github.com/repos/schwartzadev/debate-timer/releases",
-			// url: "https://api.github.com/repos/" + user + "/" + repo + "/releases",
 			url: location,
 			headers: {
 				// "Authorization": "Basic " + btoa(USERNAME + ":" + PASSWORD)
 			},
 			error:function (xhr, ajaxOptions, thrownError) {
 				if(xhr.status==404) {
-					$("#total-dl").text("404 - check url string");
+					$("#title-link").text("404 - check url string");
+					$("#title-link").css('textDecoration','none');
+					$(".info").hide();
+					$(".source").hide();
 				};
 			}
 		}).then(function(data) {
