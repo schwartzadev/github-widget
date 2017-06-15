@@ -1,3 +1,8 @@
+// TODO
+// [x] Add link to repo (link h3)
+// [x] link up the info button
+// [ ] nicer 404 behavior
+
 	var totalDownloads = 0
 
 	$(document).ready(function() {
@@ -5,7 +10,6 @@
 		var UrlRepo = getUrlVar("repo");
 		getDlCount(UrlUser, UrlRepo);
 		getRepo(UrlUser, UrlRepo);
-		// console.log(repo)
 	});
 
 
@@ -34,14 +38,15 @@
 					openIssues : data.open_issues_count,
 					stars : data.stargazers_count,
 					size : data.size,
-					owner : data.owner.login
+					owner : data.owner.login,
+					url : data.html_url
 				};
-				console.log(repo);
 				$("#name").text(repo.name);
 				$("#stars").text(repo.stars.toLocaleString());
 				$("#forks").text(repo.forks.toLocaleString());
 				$("#issues").text(repo.openIssues.toLocaleString());
 				$("#author").text(repo.owner);
+				$("#title-link").attr("href", repo.url)
 				return repo;
 			}
 		});
@@ -68,7 +73,6 @@
 					totalDownloads += c;
 				};
 			};
-			console.log("total downloads:\t" + totalDownloads);
 			$("#total-dl").text(totalDownloads.toLocaleString());
 		});
 	};
