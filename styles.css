@@ -1,0 +1,40 @@
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+		.inside {
+			margin-left: 1em;
+		}
+
+		body {
+			padding: 10px;
+			margin: 0;
+			font: .9em 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: 400;
+		}
+
+		body,
+		a {
+			color: rgb(250, 250, 250);
+		}
+
+		.box {
+			background: #6699FF;
+			box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+			border-radius: .3em;
+			display: inline-block;
+			position:relative;
+		}
+
+		.info {
+			text-align: center;
+		}
+
+		h3 {
+			text-align: center;
+			margin: .5em 1em .25em;
+		}
+
+		.source {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: .25em;
+		}
