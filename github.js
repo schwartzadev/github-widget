@@ -69,6 +69,11 @@
 					totalDownloads += c;
 				};
 			};
-			$("#total-dl").text(totalDownloads.toLocaleString());
+			if (totalDownloads > 0) {
+				$("#total-dl").text(totalDownloads.toLocaleString());
+			}
+			else {
+				$("#dl-container").hide()
+			}
 		});
 	};
